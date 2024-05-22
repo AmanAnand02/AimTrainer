@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #29cef7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    color: #faebd7;
+    overflow: hidden;
+    text-align: center;
+    background-color: #1e1f26;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 2.4;
+}
+
+.btn {
+    color: #faebd7;
+    cursor: pointer;
+    border: 3px solid #feabd7;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+.btn:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background-color: #011623;
+}
+
+
+.screen.up {
+    margin-top: -100vh;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.list li {
+    margin: 10px;
+}
+
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.stats div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stats div span {
+    margin-left: 10px;
+    color: var(--primary-color);
+}
+
+
+.lives {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.lives .heart {
+    width: 20px;
+    height: 20px;
+}
+
+
+.lives .dead {
+    opacity: 0.5;
+}
+
+
+.board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    flex: 1;
+    background-color: #301e2e;
+    overflow: hidden;
+    cursor: url("aim.png") 25 25, auto;
+}
+
+
+.options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#minimize {
+    display: none;
+}
+
+.circle {
+    /* We will generate through js */
+    /* width: 50px;
+    height: 50px; */
+    position: absolute;
+    background-color: var(--primary-color);
+    animation: circle 2s linear forwards;
+    border-radius: 50%;
+}
+
+
+@keyframes circle {
+    100% {
+        transform: scale(0);
+    }
+}
+
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+
+.results p {
+    font-size: 2rem;
+}
+
+.results p span {
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+/* Responsiveness */
+
+@media(max-widht: 768px) {
+    h1 {
+        font-size: 2rem
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .stats {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .stats div {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .lives {
+        margin-bottom: 10px;
+    }
+}
